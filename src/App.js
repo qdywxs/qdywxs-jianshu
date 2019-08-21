@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {GlobalStyle} from "./style";
+
+/*9️⃣-⑥：引入 iconfont.js 中定义的 GlobalIconStyle；*/
+import {GlobalIconStyle} from "./statics/iconfont/iconfont";
+
+import Header from "./common/header";
+
+class App extends Component  {  
+  
+  render() {  
+    return (
+      <div>
+        <GlobalStyle />
+      
+        {/*9️⃣-⑦：同理，将 <GlobalIconStyle /> 放在组件外层，后边的组件都能应用到 icon。*/}
+        <GlobalIconStyle />
+      
+        <Header />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default App; 
