@@ -1,11 +1,13 @@
 import styled from "styled-components";  
 
 export const HeaderWrapper = styled.header`
-  border-bottom: 1px solid #eee;
-  height: 56px;
-  line-height: 56px;
   box-sizing: content-box;
   padding: 0 20px;
+  height: 56px;
+  
+  line-height: 56px;
+  
+  border-bottom: 1px solid #eee;
   
   &:after {
     content: "";
@@ -23,6 +25,8 @@ export const Logo = styled.a.attrs({
   }
 `;
 
+
+/*🚀Navbar 相关~*/
 export const Navbar = styled.ul`
   float: left;
 
@@ -43,10 +47,12 @@ export const ItemList = styled.li`
 
 export const LinkList = styled.a`
   display: block;
-  line-height: 56px;
   padding: 0 10px;
-  color: #333;
+  
   font-size: 17px;
+  line-height: 56px;
+  color: #333;
+  
 
   &:hover {
     background-color: #eee;
@@ -54,21 +60,26 @@ export const LinkList = styled.a`
 
 `;
 
+
+/*🚀SearchArea 相关~*/
 export const SearchArea = styled.div`
-  float: left;
   position: relative;
+
+  float: left;  
   margin-left: 30px;
 
   .icon-search {
     position: absolute;
-    right: 10px;
     top: 10px;
+    right: 10px;
+
+    width: 32px;
+    height: 32px;  
 
     color: #aaa;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    text-align: center;
+    line-height: 32px;  
+    text-align: center;  
+
     border-radius: 50%;
   }
 `;
@@ -76,15 +87,18 @@ export const SearchArea = styled.div`
 export const SearchInput = styled.input.attrs({
   placeholder: "搜索"
 })`
-  line-height: 36px;
-  padding: 0 20px;
   width: 200px;
+  padding: 0 20px;
+  
   font-size: 15px;
-  border: none;
+  line-height: 36px;
+
+  border: none;  
   background-color: #eee;
   border-radius: 18px;
   outline: none;
-  transition: all .3s;
+
+  transition: all .3s;  
 
   &:focus {
     width: 240px;
@@ -95,23 +109,27 @@ export const SearchInput = styled.input.attrs({
   }
 
   &:focus + .icon-search {
-    background-color: #969696;
     color: #fff;
+    background-color: #969696;
   }
 `;
 
 export const SearchPanel = styled.div`
   position: absolute;
   z-index: 1;
+
   width: 250px;
   padding: 16px;
-  line-height: 1;
+
+  line-height: 1;  /*❗️重置行高。*/
+
   background-color: #fff;
   border-radius: 6px;
-  box-shadow: 0 1px 4px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 4px 2px rgba(0,0,0,0.1);  
+
   display: none;
 
-  &::before {
+  &::before {  /*❗️做出向上的“三角”。*/
     content: "";
     display: block;
     position: absolute;
@@ -134,11 +152,12 @@ export const PanelTitle = styled.h3`
 
 export const PanelChange = styled.div`
   float: right;
-  font-size: 13px;
+  
   color: #888;
+  font-size: 13px;
   font-weight: normal;
 
-  cursor: pointer;
+  cursor: pointer;  
 `;
 
 export const PanelLabels = styled.div`
@@ -147,11 +166,15 @@ export const PanelLabels = styled.div`
 
 export const LabelLink = styled.a`
   float: left;
-  border: 1px solid #ccc;
+  
   padding: 2px 4px;
   margin: 10px 10px 0 0;
+
   color: #888;
+
+  border: 1px solid #ccc;
   border-radius: 4px;
+  
 
   &:hover {
     border-color: #888;
@@ -159,6 +182,8 @@ export const LabelLink = styled.a`
 `;
 
 
+
+/*🚀Extra 相关~*/
 export const Extra = styled.div`
   float: right;
 
