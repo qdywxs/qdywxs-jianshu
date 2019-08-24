@@ -22,6 +22,17 @@ import {
 } from "./style";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      refresh: false  
+    }
+
+    
+    this.handleMouseDown = this.handleMouseDown.bind(this);
+    this.handleMouseUp = this.handleMouseUp.bind(this)
+  }
+
   render() {
     return (
       <HeaderWrapper>
@@ -50,8 +61,12 @@ class Header extends Component {
           <SearchPanel>
             <PanelTitle>
               热门搜索
-              <PanelChange>
-                <span className="iconfont icon-refresh">&#xe65f;</span>
+      
+              
+              <PanelChange onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>
+      
+               
+                <span className={this.state.refresh ? "iconfont refresh" : "iconfont"}>&#xe65f;</span>
                 换一批
               </PanelChange>
             </PanelTitle>
@@ -90,6 +105,19 @@ class Header extends Component {
         </Extra>
       </HeaderWrapper>
     )
+  }
+  
+ 
+  handleMouseDown() {
+    this.setState({
+      refresh: true  
+    })
+  }
+
+  handleMouseUp() {
+    this.setState({
+      refresh: false 
+    })
   }
 }
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";  
+import styled, {keyframes} from "styled-components";  
 
 export const HeaderWrapper = styled.header`
   box-sizing: content-box;
@@ -154,6 +154,17 @@ export const PanelTitle = styled.h3`
   font-weight: normal;
 `;
 
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 export const PanelChange = styled.div`
   float: right;
   
@@ -162,7 +173,21 @@ export const PanelChange = styled.div`
   font-weight: normal;
 
   cursor: pointer;  
+
+  &:hover {
+    color: #333;
+  }
+  
+  .refresh {
+    display: inline-block;
+    animation: ${rotate}  linear 0.3s infinite;
+  }
 `;
+
+
+
+
+
 
 export const PanelLabels = styled.div`
   margin-top: 10px;
