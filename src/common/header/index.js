@@ -21,18 +21,15 @@ import {
   
 } from "./style";
 
+import { connect } from "react-redux";
+
+/*🔟-⑧-1：简化这里的引用！
+import {changeClassNameAction, resumeClassNameAction} from "../../store/actionCreators";
+*/
+import {actionCreators} from "./store";
+
+
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      refresh: false  
-    }
-
-    
-    this.handleMouseDown = this.handleMouseDown.bind(this);
-    this.handleMouseUp = this.handleMouseUp.bind(this)
-  }
-
   render() {
     return (
       <HeaderWrapper>
@@ -62,11 +59,12 @@ class Header extends Component {
             <PanelTitle>
               热门搜索
       
-              
-              <PanelChange onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>
-      
-               
-                <span className={this.state.refresh ? "iconfont refresh" : "iconfont"}>&#xe65f;</span>
+              <PanelChange
+                onMouseDown={this.props.handleMouseDown}
+                onMouseUp={this.props.handleMouseUp}
+              > 
+                <span className={this.props.refresh ? "iconfont refresh" : "iconfont"}>&#xe65f;</span>
+
                 换一批
               </PanelChange>
             </PanelTitle>
@@ -106,19 +104,37 @@ class Header extends Component {
       </HeaderWrapper>
     )
   }
-  
- 
-  handleMouseDown() {
-    this.setState({
-      refresh: true  
-    })
-  }
 
-  handleMouseUp() {
-    this.setState({
-      refresh: false 
-    })
+}
+
+const mapStateToProps = (state) => { 
+  return { 
+    
+    /*❗️❗️❗️🔟-⑧-2：既然“数据”已经放到了自己的 Header 组件里，这里“映射”的时候就需要多加一层！
+    refresh: state.refresh  
+    */
+    refresh: state.header.refresh
   }
 }
 
-export default Header;
+const mapDispatchToProps = (dispatch) => {  
+  return {
+    handleMouseDown() { 
+    
+      const action = actionCreators.changeClassNameAction();  /*🔟-⑧-3：这里需要在 
+                                               changeClassNameAction 前边加上
+                                               actionCreators；*/
+  
+      dispatch(action)
+    
+    },
+
+    handleMouseUp() {
+      const action = actionCreators.resumeClassNameAction();  /*🔟-⑧-4：同理，
+                                                              加上前缀；*/
+      dispatch(action)
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header); 
