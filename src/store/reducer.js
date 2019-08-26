@@ -1,14 +1,16 @@
-import {combineReducers} from "redux";  /*🔟-⑨-2：从 redux 中引入一个名为 
-                                        combineReducers 的函数，其用于“合并”那些
-                                        小的 reducer；*/
+/*2️⃣-①：之前，我们的 combineReducers 来自 redux。但有了 redux-immutable 后，
+redux-immutable 也为我们提供了一个 combineReducers。
+用它生成的“数据”就为“immutable 对象”
+import {combineReducers} from "redux";  
+*/
+import {combineReducers} from "redux-immutable";
 
-import {reducer as headerReducer} from "../common/header/store";  /*🔟-⑨-1：先将小的 reducer
-                                                         拿到大的 reducer 中；*/
+import {reducer as headerReducer} from "../common/header/store"; 
 
-/*❓🔟-⑨-3：怎么“合并”呢？*/
-const reducer = combineReducers({  /*🔟-⑨-4：直接调用这个“函数”，传入小的 reducer；*/
+
+const reducer = combineReducers({  /*2️⃣-②：❗️生成的 reducer 是一个“immutable 对象”！*/
   header: headerReducer
 })
 
-/*🔟-⑨-4：最后，将这个“合并”好的 reducer 导出！*/
+
 export default reducer;
