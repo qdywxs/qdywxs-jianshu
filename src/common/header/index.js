@@ -49,7 +49,11 @@ class Header extends Component {
         </Navbar>
       
         <SearchArea>
-          <SearchInput />
+
+          <SearchInput
+            onFocus={() => this.props.handleInputFocus(this.props.list)}
+          />
+      
           <span className="iconfont icon-search">&#xe63e;</span>
       
           <SearchPanel>
@@ -67,18 +71,11 @@ class Header extends Component {
             </PanelTitle>
       
             <PanelLabels className="clearfix">
-              <LabelLink href="/">
-                区块链
-              </LabelLink>
-              <LabelLink href="/">
-                故事
-              </LabelLink>
-              <LabelLink href="/">
-                小程序
-              </LabelLink>
-              <LabelLink href="/">
-                前端一万小时
-              </LabelLink>
+              {
+                this.props.list.map((item) => {
+                  return <LabelLink key={item} href="/">{item}</LabelLink>
+                })
+              }
             </PanelLabels>
           </SearchPanel>
         </SearchArea>
@@ -106,28 +103,16 @@ class Header extends Component {
 
 const mapStateToProps = (state) => { 
   return { 
-   
-    /*❌这行代码中，state 是 src 目录下 store 中 reducer.js 里的“JS 对象”，
-    而 state.header 又是 header 目录下 store 中 reducer.js 的“immutable 对象”。
-    这样“JS 对象”和“immutable 对象”揉在一起获取“数据”的方式很不利于后期维护！
-    ❗️故，我们既然用了 immutable，那么我们最好就把所有“数据”统一为“immutable 对象”。
-    */
-    /*3️⃣既然上一步已经让 state 成为“immutable 对象”，那么这里就可以用其提供的 
-    get 方法获取“数据”。由于这里有两层 get，故可以用 immutable 提供的 getIn([]) 方法简写~
-    refresh: state.header.get("refresh")
-    */
-    refresh: state.getIn(["header", "refresh"])  /*❗️它其实是 
-                                          refresh: state.get("header").get("refresh")
-                                          的简写！*/
+    refresh: state.getIn(["header", "refresh"]),
+    
+    list: state.getIn(["header", "list"])
   }
 }
 
 const mapDispatchToProps = (dispatch) => {  
   return {
     handleMouseDown() { 
-    
       const action = actionCreators.changeClassNameAction(); 
-  
       dispatch(action)
     
     },
@@ -135,6 +120,14 @@ const mapDispatchToProps = (dispatch) => {
     handleMouseUp() {
       const action = actionCreators.resumeClassNameAction();
       dispatch(action)
+    },
+    
+    
+    handleInputFocus(list) {  
+      if(list.size === 0) {  /*❗️6️⃣-④：仅当 size === 0 时，我们才发送 Ajax 请求！*/
+        const action = actionCreators.initLabelAction();
+        dispatch(action)
+      }
     }
   }
 }
