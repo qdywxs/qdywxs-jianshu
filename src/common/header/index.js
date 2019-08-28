@@ -27,6 +27,24 @@ import {actionCreators} from "./store";
 
 
 class Header extends Component {
+  
+  getPanels() {
+    const newList = this.props.list.toJS();
+    const pageLabels = [];  
+    
+    if(newList.length) {  /*❗️❗️❗️8️⃣-③：设置一个“条件”，只有 newList 中有“数据”时（
+                          即，Ajax 获取到数据后）才执行 for 循环！*/
+      for(let i=(this.props.page - 1)*10; i<this.props.page*10; i++) { 
+        pageLabels.push(  
+          <LabelLink key={newList[i]} href="/">  
+            {newList[i]} 
+          </LabelLink>
+        )
+      }
+      return pageLabels; 
+    }
+  } 
+  
   render() {
     return (
       <HeaderWrapper>
@@ -63,19 +81,17 @@ class Header extends Component {
               <PanelChange
                 onMouseDown={this.props.handleMouseDown}
                 onMouseUp={this.props.handleMouseUp}
-              > 
-                <span className={this.props.refresh ? "iconfont refresh" : "iconfont"}>&#xe65f;</span>
 
+                onClick={() => this.props.handleChangePage(this.props.page, this.props.totalPage)}
+              >  
+                  
+                <span className={this.props.refresh ? "iconfont refresh" : "iconfont"}>&#xe65f;</span>
                 换一批
               </PanelChange>
             </PanelTitle>
       
             <PanelLabels className="clearfix">
-              {
-                this.props.list.map((item) => {
-                  return <LabelLink key={item} href="/">{item}</LabelLink>
-                })
-              }
+              {this.getPanels()}
             </PanelLabels>
           </SearchPanel>
         </SearchArea>
@@ -98,14 +114,15 @@ class Header extends Component {
       </HeaderWrapper>
     )
   }
-
 }
 
 const mapStateToProps = (state) => { 
   return { 
     refresh: state.getIn(["header", "refresh"]),
+    list: state.getIn(["header", "list"]),
     
-    list: state.getIn(["header", "list"])
+    page: state.getIn(["header", "page"]),
+    totalPage: state.getIn(["header", "totalPage"])
   }
 }
 
@@ -124,9 +141,17 @@ const mapDispatchToProps = (dispatch) => {
     
     
     handleInputFocus(list) {  
-      if(list.size === 0) {  /*❗️6️⃣-④：仅当 size === 0 时，我们才发送 Ajax 请求！*/
+      if(list.size === 0) { 
         const action = actionCreators.initLabelAction();
         dispatch(action)
+      }
+    },
+    
+    handleChangePage(page, totalPage) {
+      if(page < totalPage) {
+        dispatch(actionCreators.changePageAction(page + 1))
+      }else {
+        dispatch(actionCreators.changePageAction(1))
       }
     }
   }
