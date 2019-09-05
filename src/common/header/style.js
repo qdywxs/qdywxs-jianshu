@@ -20,6 +20,7 @@ export const Logo = styled.a.attrs({
   href: "/"
 })`
   float: left;
+  height: 56px;
   & > img {
     height: 50px;  
   }
