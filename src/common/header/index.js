@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 
+import {Link} from "react-router-dom";  /*❗️引入 Link！*/
+
 import {
   HeaderWrapper,
   Logo,
@@ -32,13 +34,14 @@ class Header extends Component {
     const newList = this.props.list.toJS();
     const pageLabels = [];  
     
-    if(newList.length) {  /*❗️❗️❗️8️⃣-③：设置一个“条件”，只有 newList 中有“数据”时（
-                          即，Ajax 获取到数据后）才执行 for 循环！*/
+    if(newList.length) {  
       for(let i=(this.props.page - 1)*10; i<this.props.page*10; i++) { 
         pageLabels.push(  
-          <LabelLink key={newList[i]} href="/">  
-            {newList[i]} 
-          </LabelLink>
+          <Link to="#">  {/*❗️加 Link！*/}
+            <LabelLink key={newList[i]}>  
+              {newList[i]} 
+            </LabelLink>
+          </Link>
         )
       }
       return pageLabels; 
@@ -48,21 +51,28 @@ class Header extends Component {
   render() {
     return (
       <HeaderWrapper>
-        <Logo>
-          <img src="https://qdywxs.github.io/jianshu-images/logo.png" alt="logo" />
-        </Logo>
+
+        <Link to="/">  {/*❗️加 Link！*/}
+          <Logo>
+            <img src="https://qdywxs.github.io/jianshu-images/logo.png" alt="logo" />
+          </Logo>
+        </Link>
 
         <Navbar className="clearfix">
           <ItemList className="active">
-            <LinkList href="/">
-              首页
-            </LinkList>
+            <Link to="/">  {/*❗️加 Link！*/}
+              <LinkList href="/">
+                首页
+              </LinkList>
+            </Link>
           </ItemList>
 
           <ItemList>
-            <LinkList href="/">
-              下载APP
-            </LinkList>           
+            <Link to="#">  {/*❗️加 Link！*/}
+              <LinkList>
+                下载APP
+              </LinkList>  
+            </Link>         
           </ItemList>
         </Navbar>
       
@@ -99,17 +109,26 @@ class Header extends Component {
       
         <Extra>
           <span className="iconfont icon-textsize" >&#xe739;</span>
-          <ExtraLink className="login" href="/">
-            登录
-          </ExtraLink>
-          <ExtraLink className="register" href="/">
-            注册
-          </ExtraLink> 
-      
-          <ExtraLink className="writing" href="/">
-            <span className="iconfont icon-pen">&#xe600;</span>
-            写文章
-          </ExtraLink>     
+
+          <Link to="#">  {/*❗️加 Link！*/}
+            <ExtraLink className="login">
+              登录
+            </ExtraLink>
+          </Link>
+
+          <Link to="#">  {/*❗️加 Link！*/}
+            <ExtraLink className="register">
+              注册
+            </ExtraLink> 
+          </Link>
+
+          <Link to="#">  {/*❗️加 Link！*/}
+            <ExtraLink className="writing">
+              <span className="iconfont icon-pen">&#xe600;</span>
+              写文章
+            </ExtraLink>  
+          </Link>  
+
         </Extra>
       </HeaderWrapper>
     )

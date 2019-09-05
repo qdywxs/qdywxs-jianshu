@@ -16,10 +16,9 @@ export const HeaderWrapper = styled.header`
   }
 `;
 
-export const Logo = styled.a.attrs({ 
-  href: "/"
-})`
+export const Logo = styled.div`  /*❗️a 改为 div！*/
   float: left;
+  height: 56px;
   & > img {
     height: 50px;  
   }
@@ -36,17 +35,18 @@ export const ItemList = styled.li`
   float: left;
   padding: 0 4px;
 
-  &.active > a{
+  &.active div{  /*❗️选择器需要改变！*/
     color: #e86f5e;  
   }
 
-  &.active > a:hover {
+  &.active div:hover {  /*❗️选择器需要改变！*/
     background-color: #fff;
   }
 `;
 
-export const LinkList = styled.a`
-  display: block;
+export const LinkList = styled.div`
+  /*❗️去掉 display: block;*/
+
   padding: 0 10px;
   
   font-size: 17px;
@@ -121,7 +121,7 @@ export const SearchPanel = styled.div`
   width: 250px;
   padding: 16px;
 
-  line-height: 1;  /*❗️重置行高。*/
+  line-height: 1;  
 
   background-color: #fff;
   border-radius: 6px;
@@ -129,7 +129,7 @@ export const SearchPanel = styled.div`
 
   display: none;
 
-  &::before {  /*❗️做出向上的“三角”。*/
+  &::before {  
     content: "";
     display: block;
     position: absolute;
@@ -193,7 +193,7 @@ export const PanelLabels = styled.div`
   margin-top: 10px;
 `;
 
-export const LabelLink = styled.a`
+export const LabelLink = styled.div`   /*❗️a 改为 div！*/
   float: left;
   
   padding: 2px 4px;
@@ -226,7 +226,7 @@ export const Extra = styled.div`
 
 `;
 
-export const ExtraLink = styled.a`
+export const ExtraLink = styled.div`  /*❗️a 改为 div！*/
   float: left;
   padding: 10px 20px;
   margin: 10px 0 0 20px;
