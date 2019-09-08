@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 
-import {Link} from "react-router-dom";
-
 /*从 components 里边引入各小组件；*/
 import Content from "./components/Content";
 import Label from "./components/Label";
