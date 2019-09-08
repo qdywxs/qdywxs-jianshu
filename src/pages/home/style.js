@@ -181,7 +181,7 @@ export const LoadMore = styled.div`
 
 /*❗️Panels 组件*/
 export const PanelImage = styled.div`
-  & > img {
+  & img {
     width: 280px;
     height: 45px;
   }

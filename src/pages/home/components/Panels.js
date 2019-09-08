@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";  /*❗️引入 Link 进行“单页”应用页面跳转！*/
 
 /*❗️2️⃣从 home 目录下的 style.js 中引入各个定义好的“样式组件”；*/
 import {
@@ -13,31 +13,41 @@ class Panels extends Component {
     /*❗️❗️❗️1️⃣：将“标签”拆分成一个个的“样式组件”；*/
     return(
       <div>
-        <Link to="#">
-          <PanelImage>
+       
+        <PanelImage>
+          <Link to="#">
             <img src="https://qdywxs.github.io/jianshu-images/panel01.png" alt="" />
-          </PanelImage>
-        </Link>
-        <Link to="#">
-          <PanelImage>
+          </Link>
+        </PanelImage>
+       
+
+        <PanelImage>
+          <Link to="#">
             <img src="https://qdywxs.github.io/jianshu-images/panel02.png" alt="" />
-          </PanelImage>
-        </Link>
-        <Link to="#">
-          <PanelImage>
+          </Link>
+        </PanelImage>
+        
+        
+        <PanelImage>
+          <Link to="#">
             <img src="https://qdywxs.github.io/jianshu-images/panel03.png" alt="" />
-          </PanelImage>
-        </Link>
-        <Link to="#">
-          <PanelImage>
+          </Link>  
+        </PanelImage>
+
+        
+        <PanelImage>
+          <Link to="#">
             <img src="https://qdywxs.github.io/jianshu-images/panel04.png" alt="" />
-          </PanelImage>
-        </Link>
-        <Link to="#">
-          <PanelImage>
+          </Link>
+        </PanelImage>
+       
+        
+        <PanelImage>
+          <Link to="#">
             <img src="https://qdywxs.github.io/jianshu-images/panel05.png" alt="" />
-          </PanelImage>
-        </Link>
+          </Link>
+        </PanelImage>
+
       </div>
     )
   }
