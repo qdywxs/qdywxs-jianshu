@@ -29,7 +29,7 @@ class App extends Component  {
               <Header />
       
                 {/*❗️❗️❗️3️⃣-⑥：将“渲染”的内容替换为“组件”；*/}
-              <Route path="/" exact component={Home}></Route>
+              <Route path="/" exact component={Home}></Route>  {/*❗️*/}
                   
               <Route path="/detail" exact component={Detail}></Route>
             </div>
