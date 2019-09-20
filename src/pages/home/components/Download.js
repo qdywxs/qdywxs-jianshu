@@ -13,7 +13,7 @@ class Download extends Component {
     
     /*❗️❗️❗️1️⃣：将“标签”拆分成一个个的“样式组件”；*/
     return(
-      <Link>
+      <Link to="/">
         <DownloadArea className="clearfix">
           <img src="https://qdywxs.github.io/jianshu-images/qr-code.png" alt="" />
           <h3>下载简书手机 APP > </h3>

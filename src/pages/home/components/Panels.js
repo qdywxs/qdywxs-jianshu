@@ -58,7 +58,7 @@ class Panels extends Component {
           this.props.panelsList.map((item) => {
             return (
               <PanelImage key={item.get("id")}>
-                <Link>
+                <Link to="/">
                   <img src={item.get("imgUrl")} alt="" />
                 </Link>
               </PanelImage>  
