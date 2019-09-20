@@ -37,7 +37,11 @@ class Header extends Component {
     if(newList.length) {  
       for(let i=(this.props.page - 1)*10; i<this.props.page*10; i++) { 
         pageLabels.push(  
+<<<<<<< HEAD
           <Link to="#"  key={newList[i]}>  {/*❗️加 Link！*/}
+=======
+          <Link to="/"  key={newList[i]}>  {/*❗️加 Link！*/}
+>>>>>>> jianshu_09
             <LabelLink>  
               {newList[i]} 
             </LabelLink>
@@ -68,7 +72,7 @@ class Header extends Component {
           </ItemList>
 
           <ItemList>
-            <Link to="#">  {/*❗️加 Link！*/}
+            <Link to="/">  {/*❗️加 Link！*/}
               <LinkList>
                 下载APP
               </LinkList>  
@@ -110,19 +114,19 @@ class Header extends Component {
         <Extra>
           <span className="iconfont icon-textsize" >&#xe739;</span>
 
-          <Link to="#">  {/*❗️加 Link！*/}
+          <Link to="/">  {/*❗️加 Link！*/}
             <ExtraLink className="login">
               登录
             </ExtraLink>
           </Link>
 
-          <Link to="#">  {/*❗️加 Link！*/}
+          <Link to="/">  {/*❗️加 Link！*/}
             <ExtraLink className="register">
               注册
             </ExtraLink> 
           </Link>
 
-          <Link to="#">  {/*❗️加 Link！*/}
+          <Link to="/">  {/*❗️加 Link！*/}
             <ExtraLink className="writing">
               <span className="iconfont icon-pen">&#xe600;</span>
               写文章
