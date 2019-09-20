@@ -52,7 +52,7 @@ class Content extends Component {
       
         {/*❗️2️⃣-②：当“点击”时，我们可以通过“箭头函数”的形式将“页码”传递
         给 getMoreList！
-        先注释掉下面这几行代码，我们需要重新改写~
+        先注释掉下面这几行代码，我们需要重新改写！
         <LoadMore     
           onClick={this.props.getMoreList}
         >  
