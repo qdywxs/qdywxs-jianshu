@@ -39,7 +39,7 @@ class Content extends Component {
                   </p>
 
                   <Foot>
-                    <Link to="#"><span className="username">{item.get("author")}</span></Link>
+                    <Link to="/"><span className="username">{item.get("author")}</span></Link>
                     <span className="iconfont icon-comment">&#xe602;</span><span>{item.get("discuss")}</span>
                     <span className="iconfont icon-heart">&#xe8f4;</span><span>{item.get("love")}</span>
                     <span className="iconfont icon-money">&#xe607;</span><span>{item.get("money")}</span>
@@ -52,7 +52,7 @@ class Content extends Component {
       
         {/*❗️2️⃣-②：当“点击”时，我们可以通过“箭头函数”的形式将“页码”传递
         给 getMoreList！
-        先注释掉下面这几行代码，我们需要重新改写！
+        先注释掉下面这几行代码，我们需要重新改写~
         <LoadMore     
           onClick={this.props.getMoreList}
         >  

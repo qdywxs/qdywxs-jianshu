@@ -37,11 +37,8 @@ class Header extends Component {
     if(newList.length) {  
       for(let i=(this.props.page - 1)*10; i<this.props.page*10; i++) { 
         pageLabels.push(  
-<<<<<<< HEAD
-          <Link to="#"  key={newList[i]}>  {/*❗️加 Link！*/}
-=======
           <Link to="/"  key={newList[i]}>  {/*❗️加 Link！*/}
->>>>>>> jianshu_09
+
             <LabelLink>  
               {newList[i]} 
             </LabelLink>
