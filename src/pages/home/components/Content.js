@@ -34,7 +34,7 @@ class Content extends Component {
             </p>
         
             <Foot>
-              <Link to="#"><span className="username">苇筱</span></Link>
+              <Link to="/"><span className="username">苇筱</span></Link>
               <span className="iconfont icon-comment">&#xe602;</span><span>31</span>
               <span className="iconfont icon-heart">&#xe8f4;</span><span>21</span>
               <span className="iconfont icon-money">&#xe607;</span><span>1</span>
@@ -58,7 +58,7 @@ class Content extends Component {
             </p>
         
             <Foot>
-              <Link><span className="username">Jobs</span></Link>
+              <Link to="/"><span className="username">Jobs</span></Link>
               <span className="iconfont icon-comment">&#xe602;</span><span>31</span>
               <span className="iconfont icon-heart">&#xe8f4;</span><span>21</span>
               <span className="iconfont icon-money">&#xe607;</span><span>1</span>
@@ -82,7 +82,7 @@ class Content extends Component {
             </p>
         
             <Foot>
-              <Link to="#"><span className="username">Oli</span></Link>
+              <Link to="/"><span className="username">Oli</span></Link>
               <span className="iconfont icon-comment">&#xe602;</span><span>9k+</span>
               <span className="iconfont icon-heart">&#xe8f4;</span><span>10k+</span>
               <span className="iconfont icon-money">&#xe607;</span><span>100000k+</span>

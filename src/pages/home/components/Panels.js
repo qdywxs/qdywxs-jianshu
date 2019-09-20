@@ -15,35 +15,35 @@ class Panels extends Component {
       <div>
        
         <PanelImage>
-          <Link to="#">
+          <Link to="/">
             <img src="https://qdywxs.github.io/jianshu-images/panel01.png" alt="" />
           </Link>
         </PanelImage>
        
 
         <PanelImage>
-          <Link to="#">
+          <Link to="/">
             <img src="https://qdywxs.github.io/jianshu-images/panel02.png" alt="" />
           </Link>
         </PanelImage>
         
         
         <PanelImage>
-          <Link to="#">
+          <Link to="/">
             <img src="https://qdywxs.github.io/jianshu-images/panel03.png" alt="" />
           </Link>  
         </PanelImage>
 
         
         <PanelImage>
-          <Link to="#">
+          <Link to="/">
             <img src="https://qdywxs.github.io/jianshu-images/panel04.png" alt="" />
           </Link>
         </PanelImage>
        
         
         <PanelImage>
-          <Link to="#">
+          <Link to="/">
             <img src="https://qdywxs.github.io/jianshu-images/panel05.png" alt="" />
           </Link>
         </PanelImage>
