@@ -115,7 +115,7 @@ class Content extends Component {
                   </p>
 
                   <Foot>
-                    <Link to="#"><span className="username">{item.get("author")}</span></Link>
+                    <Link to="/"><span className="username">{item.get("author")}</span></Link>
                     <span className="iconfont icon-comment">&#xe602;</span><span>{item.get("discuss")}</span>
                     <span className="iconfont icon-heart">&#xe8f4;</span><span>{item.get("love")}</span>
                     <span className="iconfont icon-money">&#xe607;</span><span>{item.get("money")}</span>
