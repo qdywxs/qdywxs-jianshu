@@ -1,13 +1,14 @@
 import {fromJS} from "immutable"; 
 
-import {INIT_HOME_DATA, ADD_HOME_DATA} from "./actionTypes";
+import {INIT_HOME_DATA, ADD_HOME_DATA, CHANGE_SHOW_TO_TOP} from "./actionTypes";
 
 const defaultState = fromJS({
   labelList: [],
   articleList: [],
   panelsList: [],
+  articlePage: 1,
   
-  articlePage: 1
+  showToTop: false  /*❗️❗️❗️初始为“不显示”!*/
   
 })
 
@@ -18,19 +19,19 @@ export default (state=defaultState, action) => {
       articleList: action.articleList,
       panelsList: action.panelsList
     })
-  }
+  };
   
   if(action.type === ADD_HOME_DATA) {
-    
-    /*❗️2️⃣-⑫：替换初的 articlePage！
-    先注释掉下面这行代码，我们需要用 state.merge() 来改写~
-    return state.set("articleList", state.get("articleList").concat(action.moreArticleList))
-    */
     return state.merge({
       "articleList": state.get("articleList").concat(action.moreArticleList),
-      "articlePage": action.nextPage  /*❗️2️⃣-⑬：这行代码写完，我们的“页码”就自动加了 1！*/
+      "articlePage": action.nextPage
     })
+  };
+  
+  /*3️⃣-⑩：当reducer 接收到 action 后，需要告诉 store 怎样“改变数据”；*/
+  if(action.type === CHANGE_SHOW_TO_TOP) {
+    return state.set("showToTop", action.show);
   }
   
   return state;
-}
+};
