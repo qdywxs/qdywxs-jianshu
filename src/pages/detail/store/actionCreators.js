@@ -18,7 +18,7 @@ export const getDetailData = (id) => {
   return(dispatch) => {
     
 
-    axios.get("/api/detailData.json?id=" + id)  /*❗️❗️❗️*/
+    axios.get("/api/detailData.json?id=" + id)  
       .then((res) => {
         const result = res.data.data;
       
