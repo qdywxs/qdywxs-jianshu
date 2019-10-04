@@ -1,7 +1,4 @@
-import {createGlobalStyle} from "styled-components";  /*9️⃣-③：引入 createGlobalStyle
-                                                      方法；*/
-
-/*9️⃣-④：将 iconfont 中的代码拷贝到这个“全局”样式中！*/
+import {createGlobalStyle} from "styled-components";  
 export const GlobalIconStyle = createGlobalStyle`
   @font-face {
     font-family: "iconfont";

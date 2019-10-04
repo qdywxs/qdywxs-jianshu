@@ -25,15 +25,12 @@ class Content extends Component {
             return (
               <Item key={index}>
                 <Cover>
-                  <Link to="/detail"><img src={item.get("imgUrl")} alt="" /></Link>
+                  <Link to={"/detail/" + item.get("id")}><img src={item.get("imgUrl")} alt="" /></Link>
                 </Cover>
 
                 <Details>
                   
-                  {/*❗️❗️❗️1️⃣-①：在跳转至详情页时，我们可以将其 id 也带上；
-                  <Link to="/detail">
-                  */}
-                  <Link to={"/detail/" + item.get("id")}>  {/*❗️❗️❗️注意写法~*/}
+                  <Link to={"/detail/" + item.get("id")}>  
                     <Title>
                       {item.get("title")}
                     </Title>

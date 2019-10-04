@@ -27,15 +27,9 @@ class App extends Component  {
             <div>
               <Header />
       
-              <Route path="/" exact component={Home}></Route>  {/*❗️*/}
+              <Route path="/" exact component={Home}></Route>
                   
-              {/*❗️2️⃣-①：由于路径要“完全”匹配 /detail 时，才会进入 Detail 组件。
-              但 /detail/1 和 /detail 不完全匹配，所以上边会出现空白页面。
-              可以怎么修改呢？
-              <Route path="/detail" exact component={Detail}></Route>
-              */}
               
-              {/*2️⃣-②：可以改写为 /detail/:id，给路径传递一个额外的“参数”id；*/}
               <Route path="/detail/:id" exact component={Detail}></Route>
             </div>
           </BrowserRouter>

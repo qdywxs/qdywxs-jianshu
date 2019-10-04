@@ -13,13 +13,11 @@ const changeDetailDataAction = (result) => ({
 })
 
 
-export const getDetailData = (id) => {  /*❗️4️⃣-⑤：接收到这个 id；*/
+export const getDetailData = (id) => {  
   
   return(dispatch) => {
     
-    /*❗️❗️❗️4️⃣-⑥：然后在请求“接口”时，我就可以把这个 id 传给后端；
-    axios.get("/api/detailData.json")
-    */
+
     axios.get("/api/detailData.json?id=" + id)  /*❗️❗️❗️*/
       .then((res) => {
         const result = res.data.data;
