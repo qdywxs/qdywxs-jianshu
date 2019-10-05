@@ -27,6 +27,7 @@ import { connect } from "react-redux";
 
 import {actionCreators} from "./store";
 
+import {actionCreators as loginActionCreators} from "../../pages/login/store";
 
 class Header extends Component {
   
@@ -109,12 +110,13 @@ class Header extends Component {
       
         <Extra>
           <span className="iconfont icon-textsize" >&#xe739;</span>
-
-          <Link to="/">  
-            <ExtraLink className="login">
-              登录
-            </ExtraLink>
-          </Link>
+          {this.props.login ? <ExtraLink className="login" onClick={this.props.logout}>退出</ExtraLink> : 
+            <Link to="/login">
+              <ExtraLink className="login">
+                登录
+              </ExtraLink>
+            </Link>
+          }
 
           <Link to="/">  
             <ExtraLink className="register">
@@ -141,7 +143,10 @@ const mapStateToProps = (state) => {
     list: state.getIn(["header", "list"]),
     
     page: state.getIn(["header", "page"]),
-    totalPage: state.getIn(["header", "totalPage"])
+    totalPage: state.getIn(["header", "totalPage"]),
+
+    login: state.getIn(["login", "login"])
+    
   }
 }
 
@@ -172,6 +177,12 @@ const mapDispatchToProps = (dispatch) => {
       }else {
         dispatch(actionCreators.changePageAction(1))
       }
+    },
+    
+
+    logout() {
+      const action = loginActionCreators.logout();
+      dispatch(action);
     }
   }
 }

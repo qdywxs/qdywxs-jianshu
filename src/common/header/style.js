@@ -232,6 +232,8 @@ export const ExtraLink = styled.div`  /*❗️a 改为 div！*/
   margin: 10px 0 0 20px;
   font-size: 15px;
   line-height: 1;
+  cursor: pointer;
+
 
 
   &.login {
