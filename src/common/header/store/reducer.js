@@ -1,4 +1,3 @@
-
 import {CHANGE_CLASS_NAME, RESUME_CLASS_NAME, CHANGE_LIST, CHANGE_PAGE} from "./actionTypes";
 
 import {fromJS} from "immutable";
