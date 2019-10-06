@@ -55,20 +55,14 @@ class Home extends Component {
   componentDidMount() { 
     this.props.changeHomeData();
     
-    /*❗️4️⃣-①：当组件“挂载”好后，我们在这里绑定了一些事件；*/
     this.bindEvent();
   }
 
-  /*❗️4️⃣-③：所以，我们在生命周期函数 componentWillUnmount 中“解绑”scroll 事件！*/
   componentWillUnmount() {
     window.removeEventListener("scroll", this.props.changeShowToTop)
   }
 
   bindEvent() {
-    
-    /*❗️❗️❗️4️⃣-②：且，这些“事件”是绑定在“全局”的 window 对象上的！故，我们需要做的是——
-    当“组件”被从页面上移除的时候，我们一定得把 scroll 事件从 window 上“解绑”。
-    否则，这个“组件”的事件就会影响其它的“组件”！*/
     window.addEventListener("scroll", this.props.changeShowToTop) 
   }
 

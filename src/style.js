@@ -1,6 +1,5 @@
 import {createGlobalStyle} from "styled-components";
 
-/*3️⃣将 rest.css 中的代码拷贝到这个“全局”样式中！*/
 export const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,7 +46,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 
-  /*❗️以下为我们“简书”项目自己的一些 common 样式！*/
   * {
   margin: 0;
   padding: 0;
@@ -65,7 +63,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font: 13px/1.8 -apple-system, 'SF UI Text',Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
-    /*哪里的字最多，我们就把这个字体设为通用样式。*/
+    /* 哪里的字最多，我们就把这个字体设为通用样式。 */
 
     color: #444;
   }
@@ -82,8 +80,5 @@ export const GlobalStyle = createGlobalStyle`
     margin-left: auto;
     margin-right: auto;
   }
-  /*这几行代码是为了水平”居中“，但在通用样式里边，我们一般不要去设 margin-top 的值，
-  因为后边如果特定样式需要设置这个值，我们再单独拿出来设置就可以了。
-  */
 
 `;

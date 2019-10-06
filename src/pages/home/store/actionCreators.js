@@ -1,6 +1,5 @@
 import axios from "axios";
 
-/*❗️先引入“常量”！*/
 import {INIT_HOME_DATA, ADD_HOME_DATA, CHANGE_SHOW_TO_TOP} from "./actionTypes";  
 
 import {fromJS} from "immutable";
@@ -48,7 +47,6 @@ export const getMoreList = (page) => {
 }
 
 
-/*3️⃣-⑧：定义 action；*/
 export const changeShowToTopAction = (show) => ({
   type: CHANGE_SHOW_TO_TOP,
   show
