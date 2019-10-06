@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react"; 
 
 import {
   DetailWrapper,
@@ -10,7 +10,9 @@ import {connect} from "react-redux";
 
 import {actionCreators} from "./store"; 
 
-class Detail extends Component {
+import {withRouter} from "react-router-dom";
+
+class Detail extends PureComponent { 
   
   render() {
     return(
@@ -25,7 +27,7 @@ class Detail extends Component {
     )
   }
   
-
+  
   componentDidMount() {  
     this.props.getDetail(this.props.match.params.id); 
   }
@@ -45,11 +47,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getDetail(id) {  
       const action = actionCreators.getDetailData(id); 
-      
       dispatch(action)
-    
     }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);  
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail)); 

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 
 import {Link} from "react-router-dom"; 
 
@@ -10,7 +10,7 @@ import {
 import { connect } from "react-redux";
 
 
-class Panels extends Component {
+class Panels extends PureComponent {
   render() {
     
     return(

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 
 import {Link} from "react-router-dom";
 
@@ -15,7 +15,7 @@ import { connect } from "react-redux";
 
 import {actionCreators} from "../store";  
 
-class Content extends Component {
+class Content extends PureComponent {
   render() {
     
     return(

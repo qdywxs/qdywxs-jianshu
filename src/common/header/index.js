@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 
 import {Link} from "react-router-dom";  
 
@@ -29,7 +29,7 @@ import {actionCreators} from "./store";
 
 import {actionCreators as loginActionCreators} from "../../pages/login/store";
 
-class Header extends Component {
+class Header extends PureComponent {
   
   getPanels() {
     const newList = this.props.list.toJS();

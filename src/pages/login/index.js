@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 
 import {
   LoginWrapper,
@@ -14,7 +14,7 @@ import {actionCreators} from "./store";
 import {Redirect} from "react-router-dom";
 
 
-class Login extends Component {
+class Login extends PureComponent {
   render() {
     if(!this.props.login) { 
       return(

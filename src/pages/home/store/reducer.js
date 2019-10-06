@@ -12,26 +12,34 @@ const defaultState = fromJS({
   
 })
 
+const initHomeData = (state, action) => {
+  return state.merge({  
+    labelList: action.labelList,
+    articleList: action.articleList,
+    panelsList: action.panelsList
+  });
+};
+
+const addHomeData = (state, action) => {
+  return state.merge({
+    "articleList": state.get("articleList").concat(action.moreArticleList),
+    "articlePage": action.nextPage
+  });
+}
+
+
 export default (state=defaultState, action) => {  
-  if(action.type === INIT_HOME_DATA) {
-    return state.merge({  
-      labelList: action.labelList,
-      articleList: action.articleList,
-      panelsList: action.panelsList
-    })
-  };
-  
-  if(action.type === ADD_HOME_DATA) {
-    return state.merge({
-      "articleList": state.get("articleList").concat(action.moreArticleList),
-      "articlePage": action.nextPage
-    })
-  };
-  
-  
-  if(action.type === CHANGE_SHOW_TO_TOP) {
-    return state.set("showToTop", action.show);
+  switch(action.type) {
+    case INIT_HOME_DATA:
+      return initHomeData(state, action);
+        
+    case ADD_HOME_DATA:
+      return addHomeData(state, action);
+      
+    case CHANGE_SHOW_TO_TOP:
+      return state.set("showToTop", action.show);
+      
+    default:
+      return state;
   }
-  
-  return state;
 };

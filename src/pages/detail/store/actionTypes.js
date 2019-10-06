@@ -1,1 +1,1 @@
-export const CHANGE_DETAIL_DATA_ACTION = "get_detail_data_action"; 
+export const CHANGE_DETAIL_DATA_ACTION = "detail/CHANGE_DETAIL_DATA_ACTION"; 

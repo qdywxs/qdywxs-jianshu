@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 
 import {Link} from "react-router-dom";
 
@@ -7,7 +7,7 @@ import {
   DownloadTip
 } from "../style"
 
-class Download extends Component {
+class Download extends PureComponent {
   render() {
     
     return(

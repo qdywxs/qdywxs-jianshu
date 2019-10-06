@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 
 import {
   LabelGroup,
@@ -10,7 +10,7 @@ import {
 import { connect } from "react-redux";
 
 
-class Label extends Component {
+class Label extends PureComponent {
   render() {
     return(
       <LabelGroup className="clearfix">
