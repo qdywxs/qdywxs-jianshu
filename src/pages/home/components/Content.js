@@ -13,7 +13,7 @@ import {
 
 import { connect } from "react-redux";
 
-import {actionCreators} from "../store";  /*❗️引入 actionCreators！*/
+import {actionCreators} from "../store";  
 
 class Content extends Component {
   render() {
@@ -50,15 +50,6 @@ class Content extends Component {
           })
         } 
       
-        {/*❗️2️⃣-②：当“点击”时，我们可以通过“箭头函数”的形式将“页码”传递
-        给 getMoreList！
-        先注释掉下面这几行代码，我们需要重新改写！
-        <LoadMore     
-          onClick={this.props.getMoreList}
-        >  
-          加载更多
-        </LoadMore>
-        */}
         <LoadMore
           onClick={() => this.props.getMoreList(this.props.page)}
         >
@@ -74,7 +65,6 @@ const mapStateToProps = (state) => {
   return { 
     articleList: state.getIn(["home", "articleList"]),
     
-    /*❗️2️⃣-①：在这里拿到目前是第几页；*/
     page: state.getIn(["home", "articlePage"])
   }
 }
@@ -83,10 +73,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => { 
   return {
     
-    /*2️⃣-③：相应地，getMoreList 就可以接收到这个 page；*/
     getMoreList(page) { 
-      const action = actionCreators.getMoreList(page);  /*2️⃣-④：同时，会将 page 
-                                                        actionCreators；*/
+      const action = actionCreators.getMoreList(page);  
   
       dispatch(action) 
     }
