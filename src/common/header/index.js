@@ -124,7 +124,7 @@ class Header extends Component {
             </ExtraLink> 
           </Link>
 
-          <Link to="/">  
+          <Link to="/write">
             <ExtraLink className="writing">
               <span className="iconfont icon-pen">&#xe600;</span>
               写文章
