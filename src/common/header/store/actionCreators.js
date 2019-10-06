@@ -1,4 +1,3 @@
-/*7️⃣-③：引入“常量”；*/
 import {CHANGE_CLASS_NAME, RESUME_CLASS_NAME, CHANGE_LIST, CHANGE_PAGE} from "./actionTypes";
 
 import axios from "axios";
@@ -34,7 +33,6 @@ export const initLabelAction = () => {
 }
 
 
-/*7️⃣-④：定义 action；*/
 export const changePageAction = (page) => ({
   type: CHANGE_PAGE,
   page: page

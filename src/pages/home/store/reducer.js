@@ -8,7 +8,7 @@ const defaultState = fromJS({
   panelsList: [],
   articlePage: 1,
   
-  showToTop: false  /*❗️❗️❗️初始为“不显示”!*/
+  showToTop: false  
   
 })
 
@@ -28,7 +28,7 @@ export default (state=defaultState, action) => {
     })
   };
   
-  /*3️⃣-⑩：当reducer 接收到 action 后，需要告诉 store 怎样“改变数据”；*/
+
   if(action.type === CHANGE_SHOW_TO_TOP) {
     return state.set("showToTop", action.show);
   }

@@ -16,7 +16,7 @@ export const HeaderWrapper = styled.header`
   }
 `;
 
-export const Logo = styled.div`  /*❗️a 改为 div！*/
+export const Logo = styled.div` 
   float: left;
   height: 56px;
   & > img {
@@ -25,7 +25,6 @@ export const Logo = styled.div`  /*❗️a 改为 div！*/
 `;
 
 
-/*🚀Navbar 相关~*/
 export const Navbar = styled.ul`
   float: left;
 
@@ -35,11 +34,11 @@ export const ItemList = styled.li`
   float: left;
   padding: 0 4px;
 
-  &.active div{  /*❗️选择器需要改变！*/
+  &.active div{  
     color: #e86f5e;  
   }
 
-  &.active div:hover {  /*❗️选择器需要改变！*/
+  &.active div:hover { 
     background-color: #fff;
   }
 `;
@@ -61,7 +60,6 @@ export const LinkList = styled.div`
 `;
 
 
-/*🚀SearchArea 相关~*/
 export const SearchArea = styled.div`
   position: relative;
 
@@ -193,7 +191,7 @@ export const PanelLabels = styled.div`
   margin-top: 10px;
 `;
 
-export const LabelLink = styled.div`   /*❗️a 改为 div！*/
+export const LabelLink = styled.div`  
   float: left;
   
   padding: 2px 4px;
@@ -212,7 +210,6 @@ export const LabelLink = styled.div`   /*❗️a 改为 div！*/
 
 
 
-/*🚀Extra 相关~*/
 export const Extra = styled.div`
   float: right;
 
@@ -226,7 +223,7 @@ export const Extra = styled.div`
 
 `;
 
-export const ExtraLink = styled.div`  /*❗️a 改为 div！*/
+export const ExtraLink = styled.div`  
   float: left;
   padding: 10px 20px;
   margin: 10px 0 0 20px;
