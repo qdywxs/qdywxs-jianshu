@@ -184,8 +184,6 @@ export const PanelChange = styled.div`
 
 
 
-
-
 export const PanelLabels = styled.div`
   margin-top: 10px;
 `;
