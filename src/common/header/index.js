@@ -23,9 +23,6 @@ import {
 
 import { connect } from "react-redux";
 
-/*🔟-⑧-1：简化这里的引用！
-import {changeClassNameAction, resumeClassNameAction} from "../../store/actionCreators";
-*/
 import {actionCreators} from "./store";
 
 
@@ -110,9 +107,6 @@ class Header extends Component {
 const mapStateToProps = (state) => { 
   return { 
     
-    /*❗️❗️❗️🔟-⑧-2：既然“数据”已经放到了自己的 Header 组件里，这里“映射”的时候就需要多加一层！
-    refresh: state.refresh  
-    */
     refresh: state.header.refresh
   }
 }
@@ -121,17 +115,14 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleMouseDown() { 
     
-      const action = actionCreators.changeClassNameAction();  /*🔟-⑧-3：这里需要在 
-                                               changeClassNameAction 前边加上
-                                               actionCreators；*/
+      const action = actionCreators.changeClassNameAction(); 
   
       dispatch(action)
     
     },
 
     handleMouseUp() {
-      const action = actionCreators.resumeClassNameAction();  /*🔟-⑧-4：同理，
-                                                              加上前缀；*/
+      const action = actionCreators.resumeClassNameAction();  
       dispatch(action)
     }
   }

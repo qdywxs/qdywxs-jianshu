@@ -27,7 +27,6 @@ export const Logo = styled.a.attrs({
 `;
 
 
-/*🚀Navbar 相关~*/
 export const Navbar = styled.ul`
   float: left;
 
@@ -62,7 +61,6 @@ export const LinkList = styled.a`
 `;
 
 
-/*🚀SearchArea 相关~*/
 export const SearchArea = styled.div`
   position: relative;
 
@@ -122,7 +120,7 @@ export const SearchPanel = styled.div`
   width: 250px;
   padding: 16px;
 
-  line-height: 1;  /*❗️重置行高。*/
+  line-height: 1; 
 
   background-color: #fff;
   border-radius: 6px;
@@ -130,7 +128,7 @@ export const SearchPanel = styled.div`
 
   display: none;
 
-  &::before {  /*❗️做出向上的“三角”。*/
+  &::before {  
     content: "";
     display: block;
     position: absolute;
@@ -212,8 +210,6 @@ export const LabelLink = styled.a`
 `;
 
 
-
-/*🚀Extra 相关~*/
 export const Extra = styled.div`
   float: right;
 
