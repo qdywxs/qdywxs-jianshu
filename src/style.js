@@ -1,6 +1,5 @@
 import {createGlobalStyle} from "styled-components";
 
-/*3️⃣将 rest.css 中的代码拷贝到这个“全局”样式中！*/
 export const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
