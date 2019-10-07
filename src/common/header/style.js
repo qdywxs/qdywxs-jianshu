@@ -192,7 +192,7 @@ export const PanelLabels = styled.div`
   margin-top: 10px;
 `;
 
-export const LabelLink = styled.div`   /*❗️a 改为 div！*/
+export const LabelLink = styled.div`   
   float: left;
   
   padding: 2px 4px;
@@ -224,7 +224,7 @@ export const Extra = styled.div`
 
 `;
 
-export const ExtraLink = styled.div`  /*❗️a 改为 div！*/
+export const ExtraLink = styled.div`  
   float: left;
   padding: 10px 20px;
   margin: 10px 0 0 20px;
