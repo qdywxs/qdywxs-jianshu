@@ -16,7 +16,7 @@ export const HeaderWrapper = styled.header`
   }
 `;
 
-export const Logo = styled.div`  /*❗️a 改为 div！*/
+export const Logo = styled.div`  
   float: left;
   height: 56px;
   & > img {
@@ -34,18 +34,16 @@ export const ItemList = styled.li`
   float: left;
   padding: 0 4px;
 
-  &.active div{  /*❗️选择器需要改变！*/
+  &.active div{  
     color: #e86f5e;  
   }
 
-  &.active div:hover {  /*❗️选择器需要改变！*/
+  &.active div:hover {  
     background-color: #fff;
   }
 `;
 
 export const LinkList = styled.div`
-  /*❗️去掉 display: block;*/
-
   padding: 0 10px;
   
   font-size: 17px;
@@ -181,8 +179,6 @@ export const PanelChange = styled.div`
     animation: ${rotate}  linear 0.3s infinite;
   }
 `;
-
-
 
 
 
