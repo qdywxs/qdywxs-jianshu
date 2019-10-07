@@ -1,4 +1,3 @@
-/*7️⃣-⑥：引入“常量”；*/
 import {CHANGE_CLASS_NAME, RESUME_CLASS_NAME, CHANGE_LIST, CHANGE_PAGE} from "./actionTypes";
 
 import {fromJS} from "immutable";
@@ -24,7 +23,6 @@ export default (state=defaultState, action) => {
     return state.set("list", action.data).set("totalPage", action.totalPage)
   }
   
-  /*7️⃣-⑦：编写返回的“数据”；*/
   if(action.type === CHANGE_PAGE) {
     return state.set("page", action.page);
   }

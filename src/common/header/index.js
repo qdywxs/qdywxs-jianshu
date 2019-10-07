@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import {Link} from "react-router-dom";  /*❗️引入 Link！*/
+import {Link} from "react-router-dom";  
 
 import {
   HeaderWrapper,
@@ -37,7 +37,7 @@ class Header extends Component {
     if(newList.length) {  
       for(let i=(this.props.page - 1)*10; i<this.props.page*10; i++) { 
         pageLabels.push(  
-          <Link to="/" key={newList[i]}>  {/*❗️加 Link！*/}
+          <Link to="/" key={newList[i]}> 
             <LabelLink >  
               {newList[i]} 
             </LabelLink>
@@ -52,7 +52,7 @@ class Header extends Component {
     return (
       <HeaderWrapper>
 
-        <Link to="/">  {/*❗️加 Link！*/}
+        <Link to="/">  
           <Logo>
             <img src="https://qdywxs.github.io/jianshu-images/logo.png" alt="logo" />
           </Logo>
@@ -60,7 +60,7 @@ class Header extends Component {
 
         <Navbar className="clearfix">
           <ItemList className="active">
-            <Link to="/">  {/*❗️加 Link！*/}
+            <Link to="/"> 
               <LinkList href="/">
                 首页
               </LinkList>
@@ -68,7 +68,7 @@ class Header extends Component {
           </ItemList>
 
           <ItemList>
-            <Link to="/">  {/*❗️加 Link！*/}
+            <Link to="/">  
               <LinkList>
                 下载APP
               </LinkList>  
@@ -110,19 +110,19 @@ class Header extends Component {
         <Extra>
           <span className="iconfont icon-textsize" >&#xe739;</span>
 
-          <Link to="/">  {/*❗️加 Link！*/}
+          <Link to="/"> 
             <ExtraLink className="login">
               登录
             </ExtraLink>
           </Link>
 
-          <Link to="/">  {/*❗️加 Link！*/}
+          <Link to="/">  
             <ExtraLink className="register">
               注册
             </ExtraLink> 
           </Link>
 
-          <Link to="/">  {/*❗️加 Link！*/}
+          <Link to="/">  
             <ExtraLink className="writing">
               <span className="iconfont icon-pen">&#xe600;</span>
               写文章
