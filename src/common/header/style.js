@@ -61,7 +61,7 @@ export const LinkList = styled.div`
 `;
 
 
-/* 🚀SearchArea 相关~ */
+
 export const SearchArea = styled.div`
   position: relative;
 
@@ -193,7 +193,7 @@ export const PanelLabels = styled.div`
   margin-top: 10px;
 `;
 
-export const LabelLink = styled.div`   /*❗️a 改为 div！*/
+export const LabelLink = styled.div`   
   float: left;
   
   padding: 2px 4px;
@@ -212,7 +212,7 @@ export const LabelLink = styled.div`   /*❗️a 改为 div！*/
 
 
 
-/* 🚀Extra 相关~ */
+
 export const Extra = styled.div`
   float: right;
 
@@ -226,7 +226,7 @@ export const Extra = styled.div`
 
 `;
 
-export const ExtraLink = styled.div`  /*❗️a 改为 div！*/
+export const ExtraLink = styled.div`  
   float: left;
   padding: 10px 20px;
   margin: 10px 0 0 20px;
