@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-/*❗️2️⃣-②：从 home 目录下的 style.js 中引入各个定义好的“样式组件”；*/
 import {
   LabelGroup,
   Labels,
@@ -11,7 +10,6 @@ import {
 class Label extends Component {
   render() {
     
-    /*❗️❗️❗️2️⃣-①：将“标签”拆分成一个个的“样式组件”；*/
     return(
       <LabelGroup className="clearfix">
         <Labels>

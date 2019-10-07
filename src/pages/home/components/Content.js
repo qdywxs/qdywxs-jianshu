@@ -2,7 +2,6 @@ import React, {Component} from "react";
 
 import {Link} from "react-router-dom";
 
-/*❗️2️⃣从 home 目录下的 style.js 中引入各个定义好的“样式组件”；*/
 import {
   Item,
   Cover,
@@ -15,7 +14,6 @@ import {
 class Content extends Component {
   render() {
     
-    /*❗️❗️❗️1️⃣：将“标签”拆分成一个个的“样式组件”；*/
     return(
       <div>
         <Item>
