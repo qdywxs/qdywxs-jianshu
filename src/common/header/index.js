@@ -106,19 +106,8 @@ class Header extends Component {
 
 const mapStateToProps = (state) => { 
   return { 
-   
-    /*❌这行代码中，state 是 src 目录下 store 中 reducer.js 里的“JS 对象”，
-    而 state.header 又是 header 目录下 store 中 reducer.js 的“immutable 对象”。
-    这样“JS 对象”和“immutable 对象”揉在一起获取“数据”的方式很不利于后期维护！
-    ❗️故，我们既然用了 immutable，那么我们最好就把所有“数据”统一为“immutable 对象”。
-    */
-    /*3️⃣既然上一步已经让 state 成为“immutable 对象”，那么这里就可以用其提供的 
-    get 方法获取“数据”。由于这里有两层 get，故可以用 immutable 提供的 getIn([]) 方法简写~
-    refresh: state.header.get("refresh")
-    */
-    refresh: state.getIn(["header", "refresh"])  /*❗️它其实是 
-                                          refresh: state.get("header").get("refresh")
-                                          的简写！*/
+
+    refresh: state.getIn(["header", "refresh"])  
   }
 }
 
