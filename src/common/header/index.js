@@ -124,7 +124,7 @@ const mapDispatchToProps = (dispatch) => {
     
     
     handleInputFocus(list) {  
-      if(list.size === 0) {  /*❗️6️⃣-④：仅当 size === 0 时，我们才发送 Ajax 请求！*/
+      if(list.size === 0) {  
         const action = actionCreators.initLabelAction();
         dispatch(action)
       }
