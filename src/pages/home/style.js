@@ -74,7 +74,8 @@ export const ToTop = styled.div`
   }
 `;
 
-/* ❗️Label 组件 */
+
+
 export const LabelGroup = styled.div`
   margin-top: 20px;
 `;
@@ -109,7 +110,7 @@ export const MoreLabels = styled.span`
 `;
 
 
-/* ❗️Content 组件 */
+
 export const Item = styled.div`
   position: relative;
   border-top: 1px solid #ccc;
@@ -179,7 +180,7 @@ export const LoadMore = styled.div`
 `;
 
 
-/* ❗️Panels 组件 */
+
 export const PanelImage = styled.div`
   & img {
     width: 280px;
@@ -188,7 +189,7 @@ export const PanelImage = styled.div`
 `;
 
 
-/* ❗️Domnload 组件 */
+
 export const DownloadArea = styled.div`
   position: relative;
   padding: 10px 22px;
