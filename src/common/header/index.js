@@ -32,8 +32,7 @@ class Header extends Component {
     const newList = this.props.list.toJS();
     const pageLabels = [];  
     
-    if(newList.length) {  /*❗️❗️❗️8️⃣-③：设置一个“条件”，只有 newList 中有“数据”时（
-                          即，Ajax 获取到数据后）才执行 for 循环！*/
+    if(newList.length) {  
       for(let i=(this.props.page - 1)*10; i<this.props.page*10; i++) { 
         pageLabels.push(  
           <LabelLink key={newList[i]} href="/">  

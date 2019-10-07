@@ -27,7 +27,6 @@ export const Logo = styled.a.attrs({
 `;
 
 
-/*🚀Navbar 相关~*/
 export const Navbar = styled.ul`
   float: left;
 
@@ -62,7 +61,6 @@ export const LinkList = styled.a`
 `;
 
 
-/*🚀SearchArea 相关~*/
 export const SearchArea = styled.div`
   position: relative;
 
@@ -213,7 +211,6 @@ export const LabelLink = styled.a`
 
 
 
-/*🚀Extra 相关~*/
 export const Extra = styled.div`
   float: right;
 
